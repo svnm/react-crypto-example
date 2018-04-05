@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 
-import MarketCard from '../components/MarketCard'
+import Market from '../components/Market'
 import { getMarketDetails } from '../store/markets/actions'
 
 const mapDispatchToProps = dispatch => {
@@ -20,5 +20,5 @@ const mapStateToProps = ({ markets }, { match }) => {
 }
 
 export const MarketContainer = connect(mapStateToProps, mapDispatchToProps)(
-  MarketCard
+  Market
 )

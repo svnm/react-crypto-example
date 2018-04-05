@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import {colors} from '../styles/colors'
+import {breakpoints} from '../styles/breakpoints'
 import {Logo} from '../styles/icons'
 
 export default class extends Component {
   componentWillMount() {
     const { getMaketSymbols } = this.props
-    getMaketSymbols();
+    getMaketSymbols()
   }
 
   render () {
@@ -17,7 +18,9 @@ export default class extends Component {
 
     return (
       <SymbolList>
-        <Logo />
+        <Link to='/'>
+          <Logo />
+        </Link>
         <ul>
           {markets.map((market, i ) => {
             return <li key={i}>
@@ -33,11 +36,18 @@ export default class extends Component {
 }
 
 const SymbolList = styled.div`
-  font-size: 12px;
-  width: 300px;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px 0 30px 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 
-  .active a {
-    background: #ffff00 !important;
+  @media (max-width: ${breakpoints.$break_small}) {
+    position: static;
+    width: 100%
+    height: 230px;
   }
 
   a,
@@ -54,26 +64,24 @@ const SymbolList = styled.div`
     li {
       text-overflow: ellipsis;
       white-space: nowrap;
-      overflow: hidden;
       list-style: none;
-      padding-bottom: 5px;
+      padding-bottom: 6px;
     }
 
     a {
-      color: #333333;
+      color: ${colors.$grey_dark};
     }
 
-    a.hover,
     a:hover,
     a.active {
-      background: #ffff00;
-      color: #333333;
+      background: ${colors.$light_yellow};
     }
   }
 
   .logo-icon {
     display: block;
     margin-bottom: 20px;
+    margin-left: 4px;
     width: 140px;
   }
 `

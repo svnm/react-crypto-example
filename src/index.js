@@ -5,7 +5,10 @@ import { Provider } from 'react-redux'
 
 import {MarketContainer} from './containers/MarketContainer'
 import {MarketSymbolsContainer} from './containers/MarketSymbolsContainer'
+import Home from './components/Home'
+
 import {store} from './store'
+
 require('./styles/typography')
 
 class Main extends Component {
@@ -15,6 +18,7 @@ class Main extends Component {
         <HashRouter>
           <div className='main'>
             <MarketSymbolsContainer />
+            <Route exact path='/' component={Home} />
             <Route path='/markets/:id' component={MarketContainer} />
           </div>
         </HashRouter>
