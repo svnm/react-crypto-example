@@ -22,6 +22,7 @@
     "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "fetch-mock": "^6.3.0",
     "flow-bin": "0.58.0",
     "html-webpack-plugin": "^3.2.0",
     "jsdom": "^11.7.0",

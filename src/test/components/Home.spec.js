@@ -22,14 +22,5 @@ test('Home component has an image and Logo', (t) => {
     1
   )
 
-  /*
-  t.pass(
-    expect(wrapper.find('p').first().text()).toEqual('A better way to enjoy every day')
-  )
-
-  t.pass(
-    expect(wrapper.find('p').last().text()).toEqual('© 2017 Broccoli & Co. All rights reserved.')
-  )
-  */
   t.end()
 })
