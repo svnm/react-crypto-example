@@ -1,7 +1,7 @@
 # [react crypto example](https://github.com/StevenIseki/react-crypto-example)
 #
 
-![](https://raw.githubusercontent.com/StevenIseki/react-crypto-example/master/screenshot.png)
+App displaying a list of cryptocurrency pairings using the public REST API from Bitfinex
 
 ## Run
 
