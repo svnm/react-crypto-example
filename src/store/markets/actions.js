@@ -1,3 +1,5 @@
+// @flow
+
 import {
   GET_MARKET_SYMBOLS_ERROR,
   GET_MARKET_SYMBOLS_FETCHING,
@@ -11,8 +13,8 @@ import { fetchJSON } from '../../utils';
 import marketSymbols from '../../utils/marketSymbols.json'
 
 export const getMaketSymbols = () => async (
-  dispatch,
-  getState
+  dispatch: Function,
+  getState: Function
 ) => {
   const { markets: { isFetching } } = getState();
 

@@ -1,3 +1,5 @@
+// @flow
+
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
@@ -5,8 +7,15 @@ import styled from 'styled-components'
 import {colors} from '../styles/colors'
 import {breakpoints} from '../styles/breakpoints'
 import {Logo} from '../styles/icons'
+import type { Market } from '../types/Market'
 
-export default class extends Component {
+type Props = {
+  markets: Array<Market>,
+  getMaketSymbols: Function,
+  location: any
+}
+
+export default class extends Component<Props> {
   componentWillMount() {
     const { getMaketSymbols } = this.props
     getMaketSymbols()

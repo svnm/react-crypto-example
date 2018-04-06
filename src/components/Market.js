@@ -1,3 +1,5 @@
+// @flow
+
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
@@ -9,8 +11,15 @@ import {colors} from '../styles/colors'
 import {breakpoints} from '../styles/breakpoints'
 import {Loader, Money, Back} from '../styles/icons'
 import {capitalizeFirstLetter} from '../utils'
+import type { Market } from '../types/Market'
 
-export default class extends Component {
+type Props = {
+  market: Market,
+  currentID: string,
+  getMarketDetails: Function
+}
+
+export default class extends Component<Props> {
   componentDidMount() {
     const { market, currentID, getMarketDetails } = this.props
     if (currentID !== null) {
@@ -18,7 +27,7 @@ export default class extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     const { market, currentID, getMarketDetails } = this.props
 
     if (nextProps.currentID !== currentID) {
