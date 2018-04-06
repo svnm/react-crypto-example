@@ -3,8 +3,6 @@
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-crypto-example/master/screenshot.png)
 
-App displaying a list of cryptocurrency pairings using the public REST API from Bitfinex
-
 ## Run
 
 ```
